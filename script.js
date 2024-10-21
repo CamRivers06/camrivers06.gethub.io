@@ -1,4 +1,38 @@
 function filterData() {
+  event.preventDefault();  // Prevent the form from submitting
+
+  var startdate = document.getElementById("startdate").value;
+  var enddate = document.getElementById("enddate").value;
+
+  console.log(startdate);
+  console.log(enddate);
+
+  // Convert input dates to Date objects for comparison
+  var start = new Date(startdate);
+  var end = new Date(enddate);
+
+  // Get all rows from the table body
+  var tableRows = document.querySelectorAll("#pitchData tr");
+
+  // Iterate over each row to check the date
+  tableRows.forEach(function(row) {
+      // Get the date cell from the row (2nd cell in each row, 1st index)
+      var dateCell = row.cells[1].textContent;
+
+      // Convert the date from the cell to a Date object
+      var rowDate = new Date(dateCell);
+
+      // Check if the row date falls within the specified range
+      if (rowDate >= start && rowDate <= end) {
+          // Show the row if it matches the filter
+          row.style.display = "";
+      } else {
+          // Hide the row if it doesn't match the filter
+          row.style.display = "none";
+      }
+  });
+}
+
  event.preventDefault();
   var startdate= document.getElementById("startdate").value;
     var enddate= document.getElementById("enddate").value;
