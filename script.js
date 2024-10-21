@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
               const pitchCallCell = document.createElement('td');
               pitchCallCell.textContent = pitch.PitchCall;
 
-              const KorBBCell = document.createElement('td');
+              const korBBCell = document.createElement('td');
               korBBCell.textContent = pitch.KorBB || '';  // Empty string if no data
 
               const relSpeedCell = document.createElement('td');
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
               row.appendChild(strikesCell);
               row.appendChild(outsCell);
               row.appendChild(pitchCallCell);
-              row.appendChild(KorBBCell);
+              row.appendChild(korBBCell);
               row.appendChild(relSpeedCell);
               row.appendChild(spinRateCell);
               row.appendChild(spinAxisCell);
